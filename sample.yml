@@ -1,4 +1,6 @@
-- name: restart sshd
+---
+- hosts: all
+  name: restart sshd
   remote_user: ubuntu
   become: true
   become_method: sudo
