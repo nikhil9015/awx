@@ -1,31 +1,9 @@
----
-- name: Ansible service module example
-  hosts: all
+- name: restart sshd
   remote_user: ubuntu
   become: true
-  become_method: sudo 
+  become_method: sudo
   tasks:
-    - name: Start service apache, if not started
-      ansible.builtin.service:
-        name: apache2
-        state: started
-    - name: Enabling the apache service and not touching the state
-      ansible.builtin.service:
-        name: apache2
-        enabled: yes
-    - name: Stoping the Splunk service, if started
-      ansible.builtin.service:
-        name: splunkd
-        state: stopped
-    - name: Restart service Apache2, in all cases
-      ansible.builtin.service:
-        name: apache2
-        state: restarted
-    - name: Reload service docker, in all cases
-      ansible.builtin.service:
-        name: docker
-        state: reloaded
-    - name: Restart tomcat service
-      ansible.builtin.service:
-        name: tomcat
+    - name: Start service ssh, if not started
+      ansible.builtin.systemd:
+        name: sshd
         state: restarted
