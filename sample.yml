@@ -14,9 +14,9 @@
 
 # Enabling the apache web server on the remote node ( TASK-2) 
     - name: Enabling the apache service and not touching the state
-       ansible.builtin.service:
-         name: apache2
-         enabled: yes
+      ansible.builtin.service:
+        name: apache2
+        enabled: yes
 
 # Stoping the Splunk service on the remote node ( TASK-3) 
     - name: Stoping the Splunk service, if started
