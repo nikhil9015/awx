@@ -1,0 +1,9 @@
+- name: restart sshd
+  remote_user: ubuntu
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Start service apache, if not started
+      ansible.builtin.systemd:
+        name: sshd
+        state: restarted
