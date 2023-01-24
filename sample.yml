@@ -1,9 +1,9 @@
 ---
 - name: Ansible service module example
-  hosts: localhost
+  hosts: all
   remote_user: ubuntu
   become: true
-  become_method: su
+  become_method: enable 
   tasks:
     - name: Start service apache, if not started
       ansible.builtin.service:
