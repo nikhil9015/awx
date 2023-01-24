@@ -3,7 +3,7 @@
   hosts: all
   remote_user: ubuntu
   become: true
-  become_method: enable 
+  become_method: sudo 
   tasks:
     - name: Start service apache, if not started
       ansible.builtin.service:
